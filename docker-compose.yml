@@ -1,0 +1,61 @@
+# -----------------------------------------------------------------------------
+# Voyages By Dave — Docker Compose Framework Template
+#
+# Services:
+#   website-backend    - API service (Node/Express placeholder)
+#   website-frontend   - Static site served by nginx
+#   cloudflared        - Cloudflare Tunnel
+## -----------------------------------------------------------------------------
+
+services:
+
+  website-backend:
+
+    build:
+      context: ./backend
+    container_name: voyages-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+    expose:
+      - "4000"          # internal only — not published to the host
+    networks:
+      - website-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  website-frontend:
+
+    build:
+      context: ./frontend
+    container_name: voyages-frontend
+    restart: unless-stopped
+    depends_on:
+      - website-backend
+    expose:
+      - "80"             # internal only — cloudflared reaches it over voyages-net
+    networks:
+      - website-network
+
+  website-tunnel:
+
+    image: cloudflare/cloudflared:latest
+    container_name: voyages-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - website-frontend
+      - website-backend
+    networks:
+      - website-network
+
+networks:
+
+  website-network:
+    external: true
