@@ -60,7 +60,7 @@ PAGES = [
         <p>Some trips that look straightforward become difficult when the actual transportation is considered.</p>
       </div>
     </div>
-    <p>My job is to turn those possibilities into a realistic itinerary.</p>
+    <p>My job is to turn those possibilities into a trip that makes sense on paper and works well when you're actually taking it.</p>
     <p><a href="/canada/" class="btn btn-primary">Explore Canadian travel</a></p>
   </div>
 </section>
@@ -171,7 +171,7 @@ PAGES = [
     <div class="callout">
       <h3>Professional trip planning</h3>
       <p class="fee" data-config="fee">$200</p>
-      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research, evaluation, verification, and itinerary design that takes place before reservations are made.</p>
+      <p>The planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
       <p><a href="/plan/" class="btn btn-primary">Start planning</a></p>
     </div>
   </div>
@@ -692,13 +692,13 @@ PAGES = [
       <li>Access to a professional network of preferred hotel, tour, cruise, and on-the-ground partners</li>
       <li>Support from a community of experienced travel advisors when complex situations need extra perspective</li>
       <li>Research and design that is independent of any single supplier</li>
-      <li>Itineraries built around you, not a pre-packaged commission target</li>
+      <li>Itineraries built around you rather than around a pre-packaged trip</li>
     </ul>
     <p>I am an independent advisor with <a href="%FORA_URL%" target="_blank" rel="noopener">Fora</a>, which gives me access to a curated network of travel partners and professional resources. The advice remains my own, but the network means I can draw on broader expertise when it helps your trip.</p>
     <div class="callout">
       <h3>Planning fee</h3>
       <p class="fee" data-config="fee">$200</p>
-      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research, evaluation, verification, and itinerary design that takes place before reservations are made.</p>
+      <p>The planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
     </div>
     <p><a href="/plan/" class="btn btn-primary">Start planning</a></p>
   </div>
@@ -878,7 +878,7 @@ PAGES = [
     <div class="callout" style="margin-top: 2rem;">
       <h3>Professional planning fee</h3>
       <p class="fee" data-config="fee">$200</p>
-      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research and professional work involved in designing your trip, and I'll confirm the details with you before any charges apply.</p>
+      <p>The planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
     </div>
   </div>
 </section>
@@ -913,12 +913,11 @@ PAGES = [
     </details>
     <details class="faq-item">
       <summary>How does the planning fee work?</summary>
-      <p>The planning fee is a <span data-config="fee">$200</span> non-refundable deposit. It covers the research, evaluation, verification, and itinerary design that takes place before reservations are made, and the full amount is applied toward your trip cost when you book.</p>
+      <p>The <span data-config="fee">$200</span> planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
     </details>
     <details class="faq-item">
       <summary>How do I know your work is valuable before I see the itinerary?</summary>
-      <p>The $200 planning deposit covers the research, evaluation, verification, and itinerary design that takes place before reservations are made. It is non-refundable because the planning work begins before anything is booked, but the full amount is applied toward your trip cost when you book.</p>
-      <p>The deposit simply establishes that we're both committed to moving forward before I begin the detailed research.</p>
+      <p>The <span data-config="fee">$200</span> planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
     </details>
     <details class="faq-item">
       <summary>Do you book international travel?</summary>

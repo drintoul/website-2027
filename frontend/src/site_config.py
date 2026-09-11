@@ -52,7 +52,7 @@ SITE = {
     },
     "profile_url": "https://www.davidrintoul.info",
     "fora_url": "https://www.foratravel.com/advisor/dave-rintoul",
-    "cover_image": "https://davidrintoul.info/images/dave-antartica.webp",
+    "cover_image": "https://voyagesbydave.ca/images/og-image.jpg",
 }
 
 # Convert relevant slug values to route paths

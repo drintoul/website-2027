@@ -32,9 +32,12 @@ def build_jsonld():
         "@type": "TravelAgency",
         "name": SITE["brand"],
         "url": SITE["url"],
-        "logo": SITE["url"] + "/",
+        "logo": SITE["url"] + "/favicon-2026.svg",
         "description": SITE["description_default"],
-        "areaServed": "Canada",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Canada",
+        },
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Fraser Valley",
@@ -43,8 +46,11 @@ def build_jsonld():
         },
         "telephone": SITE["phone_raw"],
         "email": SITE["email"],
-        "priceRange": f"${SITE['fee'].replace('$', '')} planning fee",
         "image": SITE["cover_image"],
+        "sameAs": [
+            SITE["profile_url"],
+            SITE["fora_url"],
+        ],
     }
     return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
 
@@ -54,7 +60,7 @@ def render_page(page):
     with open(template_path, "r", encoding="utf-8") as f:
         template = f.read()
 
-    title = SITE["brand"]
+    title = page.get("title") or SITE["brand"]
     description = clean_text(page.get("description") or SITE["description_default"])
     slug = page["slug"]
     canonical = SITE["url"] + "/" + (slug + "/" if slug else "")
