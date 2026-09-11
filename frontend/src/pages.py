@@ -171,7 +171,7 @@ PAGES = [
     <div class="callout">
       <h3>Professional trip planning</h3>
       <p class="fee" data-config="fee">$200</p>
-      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research and professional work that goes into designing your itinerary, and it helps protect both of us by making sure the planning work is valued before it begins.</p>
+      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research, evaluation, verification, and itinerary design that takes place before reservations are made.</p>
       <p><a href="/plan/" class="btn btn-primary">Start planning</a></p>
     </div>
   </div>
@@ -698,7 +698,7 @@ PAGES = [
     <div class="callout">
       <h3>Planning fee</h3>
       <p class="fee" data-config="fee">$200</p>
-      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research, evaluation, and itinerary design that happens before any reservations are made, and it helps protect both of us by confirming we are both committed to the trip before the detailed work begins.</p>
+      <p>The $200 planning deposit is non-refundable and is applied in full toward your trip cost once you book. It covers the research, evaluation, verification, and itinerary design that takes place before reservations are made.</p>
     </div>
     <p><a href="/plan/" class="btn btn-primary">Start planning</a></p>
   </div>
@@ -715,26 +715,25 @@ PAGES = [
 <header class="page-header">
   <div class="container">
     <h1>About Dave</h1>
-    <p class="lead">Canadian travel advisor, researcher, and trip builder.</p>
+    <p class="lead">Canadian travel advisor, researcher, and trip builder based in British Columbia's Fraser Valley.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="container split">
     <div>
-      <p>I'm Canadian, based in British Columbia's Fraser Valley, and I've travelled through every Canadian province as well as dozens of countries around the world. The more I've travelled internationally, the more I've appreciated how much there is to explore at home.</p>
-      <p>Voyages By Dave is not a generic travel agency. Canada itself is the primary area of expertise, with international travel available as a secondary capability for existing clients and for selected cruises, diving, expedition, and complex trips.</p>
-      <h2>What shapes my approach</h2>
-      <ul class="checklist">
-        <li>Professional diving background, including PADI Course Director and Dive Safety Officer experience</li>
-        <li>Technology background and personally developed research systems</li>
-        <li>Strong interest in Canada, the Pacific Northwest, diving, complex itineraries, and operational details</li>
-        <li>Extensive international travel that provides useful comparison and perspective</li>
-      </ul>
-      <h2>Why I work with Fora</h2>
-      <p>As an independent advisor, I partner with <a href="%FORA_URL%" target="_blank" rel="noopener">Fora</a> for its professional travel advisor network and curated partner relationships. That means you get my personal research and decision-making, plus access to a broader ecosystem of hotel, tour, cruise, and on-the-ground partners, and support from a community of experienced advisors when a situation needs extra perspective.</p>
-      <p>I don't turn the About page into a résumé. What matters is that I can research thoroughly, verify details, and design trips that fit the people taking them.</p>
-      <p>You can also view my full profile at <a href="%PROFILE_URL%" target="_blank" rel="noopener">davidrintoul.info</a> or my <a href="%FORA_URL%" target="_blank" rel="noopener">FORA travel advisor page</a>.</p>
+      <p>I've travelled through every Canadian province and dozens of countries around the world. The more of the world I've seen, the more I've come to appreciate both the extraordinary variety of travel within Canada and how surprisingly complicated it can be to plan well.</p>
+      <p>My background is unusual for a travel advisor. Before Voyages By Dave, my career included technology, operational safety, and professional diving. As a PADI Course Director and Dive Safety Officer, I worked in environments where logistics, preparation, accurate information, and contingency planning mattered.</p>
+      <p>That experience still shapes how I approach travel.</p>
+      <p>I pay attention to the pieces that determine whether a trip actually works: realistic travel times, transportation connections, seasonal limitations, accessibility, pacing, supplier policies, and what happens when several of those constraints have to work together.</p>
+      <h2>Research is part of how I travel</h2>
+      <p>My technology background has also allowed me to develop my own research tools for comparing options, organizing information, and identifying details that need verification.</p>
+      <p>I use technology to investigate more possibilities, but I don't outsource the decision-making to AI. Important facts are checked against current sources whenever practical, and I apply my own experience and judgement to the final itinerary.</p>
+      <p>That's particularly useful for Canadian trips involving rail, ferries, remote destinations, accessibility requirements, multiple generations, complex routing, or a requirement that the entire journey remain within Canada.</p>
+      <h2>Why Fora</h2>
+      <p>I'm an independent travel advisor affiliated with Fora. That gives me access to professional travel resources, preferred hotel, cruise and tour relationships, and a broader network of experienced advisors while allowing me to personally research and design your trip.</p>
+      <p>You get one person who understands your trip, backed by a larger professional network when additional expertise or support is useful.</p>
+      <p>You can also learn more about my professional background at <a href="%PROFILE_URL%" target="_blank" rel="noopener">davidrintoul.info</a> or view my <a href="%FORA_URL%" target="_blank" rel="noopener">Fora travel advisor profile</a>.</p>
     </div>
     <aside class="headshot">
       <img src="/images/dave-antartica.webp" alt="Dave Rintoul" width="640" height="640" loading="lazy">
@@ -914,11 +913,12 @@ PAGES = [
     </details>
     <details class="faq-item">
       <summary>How does the planning fee work?</summary>
-      <p>The planning fee is a <span data-config="fee">$200</span> non-refundable deposit that is applied in full toward your trip cost once you book. It covers research, evaluation, verification, and itinerary design, and it simply helps protect both of us by making sure we are both committed before the detailed work begins.</p>
+      <p>The planning fee is a <span data-config="fee">$200</span> non-refundable deposit. It covers the research, evaluation, verification, and itinerary design that takes place before reservations are made, and the full amount is applied toward your trip cost when you book.</p>
     </details>
     <details class="faq-item">
       <summary>How do I know your work is valuable before I see the itinerary?</summary>
-      <p>It is a fair question. The deposit covers the research and design that happens before any booking. You would not expect a lawyer or an accountant to do the work first and then decide whether to pay. The $200 is a planning deposit, it comes off your trip cost, and it is how I protect the time that goes into building a real itinerary rather than a quick quote. I used to do the research first, and a small number of people used that information to book elsewhere. The deposit is not a gotcha; it simply confirms we are both committed before I start.</p>
+      <p>The $200 planning deposit covers the research, evaluation, verification, and itinerary design that takes place before reservations are made. It is non-refundable because the planning work begins before anything is booked, but the full amount is applied toward your trip cost when you book.</p>
+      <p>The deposit simply establishes that we're both committed to moving forward before I begin the detailed research.</p>
     </details>
     <details class="faq-item">
       <summary>Do you book international travel?</summary>
