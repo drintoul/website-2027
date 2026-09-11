@@ -17,6 +17,40 @@ from pages import PAGES
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Stable canonical entity identifiers
+AGENCY_ID = SITE["url"] + "/#travelagency"
+WEBSITE_ID = SITE["url"] + "/#website"
+AREA_CANADA_ID = SITE["url"] + "/#area/canada"
+PERSON_ID = SITE["url"] + "/about/#dave"
+
+BUSINESS_DESCRIPTION = (
+    "Personal travel planning for Canadians whose trips benefit from careful research, "
+    "comparison, verification and professional judgment. Voyages By Dave specializes in "
+    "Canadian travel, accessible and multigenerational trips, cruises, adventure and diving "
+    "travel, and complex itineraries, combining personally developed research technology with "
+    "professional travel relationships and advisor support."
+)
+
+SLOGAN = "Canada is the destination. Dave makes it work."
+
+KNOWS_ABOUT = [
+    "Canadian travel",
+    "British Columbia travel",
+    "Canadian Rockies travel",
+    "Canada rail travel",
+    "Canadian road trips",
+    "Canadian cruises",
+    "Accessible travel",
+    "Multigenerational travel",
+    "Adventure travel",
+    "Diving travel",
+    "Expedition travel",
+    "Complex itineraries",
+    "Multi-destination travel",
+    "Travel logistics",
+    "Travel research",
+]
+
 
 def write(path, content):
     os.makedirs(os.path.dirname(path) if os.path.dirname(path) else BASE_DIR, exist_ok=True)
@@ -28,37 +62,117 @@ def clean_text(text):
     return " ".join(text.split())
 
 
-def build_jsonld():
-    data = {
-        "@context": "https://schema.org",
+def build_jsonld(page, canonical):
+    """Build the home-page @graph: WebSite, WebPage and primary TravelAgency entity."""
+    agency = {
         "@type": "TravelAgency",
+        "@id": AGENCY_ID,
         "name": SITE["brand"],
         "url": SITE["url"],
         "logo": SITE["url"] + "/favicon-2026.svg",
-        "description": SITE["description_default"],
-        "areaServed": {
-            "@type": "Country",
-            "name": "Canada",
-        },
+        "image": SITE["cover_image"],
+        "description": BUSINESS_DESCRIPTION,
+        "slogan": SLOGAN,
+        "telephone": SITE["phone_raw"],
+        "email": SITE["email"],
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Fraser Valley",
             "addressRegion": "BC",
             "addressCountry": "CA",
         },
-        "telephone": SITE["phone_raw"],
-        "email": SITE["email"],
-        "image": SITE["cover_image"],
+        "areaServed": {
+            "@type": "Country",
+            "@id": AREA_CANADA_ID,
+            "name": "Canada",
+        },
         "sameAs": [
             SITE["profile_url"],
             SITE["fora_url"],
         ],
+        "knowsAbout": KNOWS_ABOUT,
+        "founder": {"@id": PERSON_ID},
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "@id": SITE["url"] + "/#offer/personal-travel-planning",
+                "itemOffered": {
+                    "@type": "Service",
+                    "@id": SITE["url"] + "/#service/personal-travel-planning",
+                    "name": "Personal Travel Planning",
+                    "description": "Research, comparison, and itinerary planning for travelers whose trips benefit from professional research, verification, and judgment.",
+                    "provider": {"@id": AGENCY_ID},
+                    "areaServed": {"@id": AREA_CANADA_ID},
+                },
+            },
+            {
+                "@type": "Offer",
+                "@id": SITE["url"] + "/#offer/complex-itinerary-planning",
+                "itemOffered": {
+                    "@type": "Service",
+                    "@id": SITE["url"] + "/#service/complex-itinerary-planning",
+                    "name": "Complex Itinerary Planning",
+                    "description": "Planning and coordination for multi-destination, accessibility-sensitive, multigenerational, or otherwise complex journeys where transportation, timing, and logistics need to work together.",
+                    "provider": {"@id": AGENCY_ID},
+                    "areaServed": {"@id": AREA_CANADA_ID},
+                },
+            },
+            {
+                "@type": "Offer",
+                "@id": SITE["url"] + "/#offer/travel-research-verification",
+                "itemOffered": {
+                    "@type": "Service",
+                    "@id": SITE["url"] + "/#service/travel-research-verification",
+                    "name": "Travel Research and Verification",
+                    "description": "Research and cross-checking of destinations, transportation, accommodations, cruises, accessibility information, and other travel details using current sources and personally developed research technology.",
+                    "provider": {"@id": AGENCY_ID},
+                    "areaServed": {"@id": AREA_CANADA_ID},
+                },
+            },
+            {
+                "@type": "Offer",
+                "@id": SITE["url"] + "/#offer/professional-travel-access-support",
+                "itemOffered": {
+                    "@type": "Service",
+                    "@id": SITE["url"] + "/#service/professional-travel-access-support",
+                    "name": "Professional Travel Access and Support",
+                    "description": "Travel planning and booking supported by professional travel relationships, advisor resources, and industry connections that may provide additional recognition, amenities, benefits, experiences, or support when available.",
+                    "provider": {"@id": AGENCY_ID},
+                    "areaServed": {"@id": AREA_CANADA_ID},
+                },
+            },
+        ],
+    }
+
+    website = {
+        "@type": "WebSite",
+        "@id": WEBSITE_ID,
+        "url": SITE["url"],
+        "name": SITE["brand"],
+        "publisher": {"@id": AGENCY_ID},
+    }
+
+    webpage = {
+        "@type": "WebPage",
+        "@id": canonical + "#webpage",
+        "url": canonical,
+        "name": page.get("title") or SITE["brand"],
+        "description": clean_text(page.get("description") or SITE["description_default"]),
+        "isPartOf": {"@id": WEBSITE_ID},
+        "mainEntity": {"@id": AGENCY_ID},
+    }
+
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [website, webpage, agency],
     }
     return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
 
 
-def build_faq_jsonld(content):
+def build_faq_jsonld(page, canonical):
+    """Build FAQ page schema referencing the primary TravelAgency and WebSite."""
     main_entity = []
+    content = page["content"]
     for m in re.finditer(r'<details class="faq-item">\s*<summary>(.*?)</summary>\s*(.*?)\s*</details>', content, re.DOTALL):
         question = m.group(1).strip()
         answer_html = m.group(2)
@@ -73,10 +187,79 @@ def build_faq_jsonld(content):
                 "text": answer,
             },
         })
+
+    faq_page = {
+        "@type": "FAQPage",
+        "@id": canonical + "#webpage",
+        "url": canonical,
+        "name": page.get("title") or SITE["brand"],
+        "description": clean_text(page.get("description") or SITE["description_default"]),
+        "isPartOf": {"@id": WEBSITE_ID},
+        "about": {"@id": AGENCY_ID},
+        "mainEntity": main_entity,
+    }
+
     data = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": main_entity,
+        "@graph": [faq_page],
+    }
+    return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
+
+
+def build_about_jsonld(page, canonical):
+    """Build the About page schema with a Person as mainEntity."""
+    lead_match = re.search(r'<p class="lead">(.*?)</p>', page["content"], re.DOTALL)
+    person_description = (
+        clean_text(html.unescape(re.sub(r'<[^>]+>', '', lead_match.group(1))))
+        if lead_match
+        else "Canadian travel advisor based in British Columbia's Fraser Valley."
+    )
+
+    person = {
+        "@type": "Person",
+        "@id": PERSON_ID,
+        "name": "Dave Rintoul",
+        "url": canonical,
+        "jobTitle": "Canadian travel advisor and trip planner",
+        "description": person_description,
+        "sameAs": [SITE["profile_url"]],
+        "knowsAbout": KNOWS_ABOUT,
+        "worksFor": {"@id": AGENCY_ID},
+    }
+
+    webpage = {
+        "@type": "WebPage",
+        "@id": canonical + "#webpage",
+        "url": canonical,
+        "name": page.get("title") or SITE["brand"],
+        "description": clean_text(page.get("description") or SITE["description_default"]),
+        "isPartOf": {"@id": WEBSITE_ID},
+        "about": {"@id": AGENCY_ID},
+        "mainEntity": person,
+    }
+
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [webpage],
+    }
+    return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
+
+
+def build_webpage_jsonld(page, canonical):
+    """Build a generic WebPage schema that references the primary business entity."""
+    webpage = {
+        "@type": "WebPage",
+        "@id": canonical + "#webpage",
+        "url": canonical,
+        "name": page.get("title") or SITE["brand"],
+        "description": clean_text(page.get("description") or SITE["description_default"]),
+        "isPartOf": {"@id": WEBSITE_ID},
+        "about": {"@id": AGENCY_ID},
+    }
+
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [webpage],
     }
     return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
 
@@ -94,7 +277,14 @@ def render_page(page):
     body_class = page.get("body_class", "page-sub") + f" page-{slug_class}"
     content = page["content"].strip()
 
-    jsonld = build_jsonld() if slug == "" else (build_faq_jsonld(content) if slug == "faq" else "")
+    if slug == "":
+        jsonld = build_jsonld(page, canonical)
+    elif slug == "faq":
+        jsonld = build_faq_jsonld(page, canonical)
+    elif slug == "about":
+        jsonld = build_about_jsonld(page, canonical)
+    else:
+        jsonld = build_webpage_jsonld(page, canonical)
 
     html = template
     for key, value in {

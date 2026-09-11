@@ -122,7 +122,7 @@ PAGES = [
       <h2 id="accessible-multi-heading">Accessible &amp; multigenerational travel</h2>
       <p>An &ldquo;accessible&rdquo; label rarely tells the whole story. I research the details that matter: step-free access, walk distances, accessible transportation, washroom usability, terrain, seating, and equipment rental.</p>
       <p>Multigenerational trips need thoughtful pacing so parents, children, and grandparents can all enjoy the journey without exhaustion.</p>
-      <p><a href="/accessible-travel-canada/" class="btn btn-secondary">Accessible travel</a> <a href="/multigenerational-canada/" class="btn btn-secondary">Multigenerational trips</a></p>
+      <p class="btn-row"><a href="/accessible-travel-canada/" class="btn btn-secondary">Accessible travel</a><a href="/multigenerational-canada/" class="btn btn-secondary">Multigenerational trips</a></p>
     </div>
   </div>
 </section>
@@ -162,7 +162,7 @@ PAGES = [
   <div class="container split">
     <div>
       <h2 id="about-heading">About Dave</h2>
-      <p>I'm Canadian, based in British Columbia's Fraser Valley, and I've travelled through every Canadian province as well as dozens of countries around the world. The more I've travelled internationally, the more I've appreciated how much there is to explore at home.</p>
+      <p>I'm Canadian: I grew up in Ontario, went to school at Waterloo, and I'm now based in British Columbia's Fraser Valley. I've travelled through every Canadian province as well as dozens of countries around the world. The more I've travelled internationally, the more I've appreciated how much there is to explore at home.</p>
       <p>My background includes professional diving, technology, and operational safety. That experience shaped how I research: I look at the details that make a trip actually work, not just the highlights in a brochure.</p>
       <p>You can learn more about me on <a href="%PROFILE_URL%" target="_blank" rel="noopener">my profile site</a> and view my <a href="%FORA_URL%" target="_blank" rel="noopener">FORA travel advisor page</a>.</p>
       <p>Through Fora, I also have access to a professional network of travel partners and advisor support that lets me handle more complex trips than I could manage entirely alone.</p>
@@ -171,7 +171,7 @@ PAGES = [
     <div class="callout">
       <h3>Professional trip planning</h3>
       <p class="fee" data-config="fee">$200</p>
-      <p>The planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
+      <p>The planning deposit covers the research and itinerary design completed before reservations are made. If you book the trip with me, it is applied to your trip cost. If, after I have completed the research, you choose to book through another provider, it is non-refundable.</p>
       <p><a href="/plan/" class="btn btn-primary">Start planning</a></p>
     </div>
   </div>
@@ -180,6 +180,10 @@ PAGES = [
 <section class="section section-surface" id="faq" aria-labelledby="faq-heading">
   <div class="container">
     <h2 id="faq-heading">Frequently asked questions</h2>
+    <details class="faq-item">
+      <summary>How does the planning fee work?</summary>
+      <p>The <span data-config="fee">$200</span> planning deposit covers the research and itinerary design completed before reservations are made and confirms that we're both committed to moving forward.</p>
+    </details>
     <details class="faq-item">
       <summary>Do I need a travel advisor for a trip inside Canada?</summary>
       <p>Canada feels familiar because it's home, but it's also enormous. Vancouver and Halifax are thousands of kilometres apart, ferries affect itineraries in British Columbia and Atlantic Canada, rail works very differently from flying, and remote destinations may have limited transportation. You can absolutely plan it yourself; I help when you don't want to figure out every detail alone.</p>
