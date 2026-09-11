@@ -355,6 +355,19 @@ p.lead, .lead {
   font-weight: 300;
 }
 
+.hero .btn-primary {
+  background: #fff;
+  color: var(--brand-primary);
+  border-color: #fff;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus {
+  background: var(--brand-dark);
+  color: #fff;
+  border-color: var(--brand-dark);
+}
+
 .hero .btn-secondary {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.85);
@@ -436,6 +449,26 @@ p.lead, .lead {
   background: var(--brand-dark);
   color: #fff;
   border-color: var(--brand-dark);
+}
+
+.site-header .btn-primary {
+  background: transparent;
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  box-shadow: none;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.site-header .btn-primary:hover,
+.site-header .btn-primary:focus {
+  background: var(--brand-primary);
+  color: #fff;
+  border-color: var(--brand-primary);
 }
 
 .btn-secondary {
@@ -619,19 +652,19 @@ p.lead, .lead {
 
 /* CTA section */
 .cta-section {
-  background: linear-gradient(135deg, var(--brand-forest) 0%, var(--brand-dark) 100%);
-  color: #fff;
+  background: var(--brand-accent);
+  color: var(--text);
   text-align: center;
   padding: 5rem 0;
 }
 
 .cta-section h2 {
-  color: #fff;
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
 .cta-section .lead {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--muted);
 }
 
 /* FAQ */

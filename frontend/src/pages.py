@@ -737,7 +737,7 @@ PAGES = [
       <p>You can also view my full profile at <a href="%PROFILE_URL%" target="_blank" rel="noopener">davidrintoul.info</a> or my <a href="%FORA_URL%" target="_blank" rel="noopener">FORA travel advisor page</a>.</p>
     </div>
     <aside class="headshot">
-      <img src="/images/david-rintoul-headshot.jpg" alt="Dave Rintoul" width="800" height="800" loading="lazy">
+      <img src="/images/dave-antartica.webp" alt="Dave Rintoul" width="640" height="640" loading="lazy">
     </aside>
   </div>
 </section>

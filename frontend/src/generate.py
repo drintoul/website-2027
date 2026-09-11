@@ -143,7 +143,7 @@ def main():
     write(os.path.join(BASE_DIR, "robots.txt"), generate_robots())
 
     src_dir = os.path.dirname(__file__)
-    for asset in ("style.css", "site.js", "favicon.svg"):
+    for asset in ("style.css", "site.js", "favicon-2026.svg"):
         src = os.path.join(src_dir, asset)
         if os.path.exists(src):
             dst = os.path.join(BASE_DIR, asset)
