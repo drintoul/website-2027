@@ -190,7 +190,7 @@ PAGES = [
     </details>
     <details class="faq-item">
       <summary>Do you book international travel?</summary>
-      <p>Canada is my primary focus. I also help existing clients and travellers with selected international cruises, diving, expedition, and complex travel.</p>
+      <p>Canada is my prime focus, but I do work with travellers on trips outside Canada as well. The best fit is usually selected international cruises, diving, expedition travel, or complex multi-destination trips. Existing clients are also welcome to ask about international options.</p>
     </details>
     <p><a href="/faq/" class="btn btn-secondary">Read all FAQs</a></p>
   </div>
@@ -517,20 +517,21 @@ PAGES = [
     {
         "slug": "canada-only-travel",
         "title": "Canada-Only Travel | Voyages By Dave",
-        "description": "Plan a trip that stays entirely within Canada. I verify flight routings, cruise ports, ferry routes, rail routes, and ground transportation to confirm every segment remains in Canada.",
+        "description": "Plan a trip that stays entirely within Canada. I verify flight routings, cruise ports, ferry routes, rail routes, and ground transportation so you can confirm your trip remains in Canada for insurance or other requirements.",
         "body_class": "page-sub",
         "priority": 0.9,
         "content": """
 <header class="page-header">
   <div class="container">
     <h1>Need the entire trip to stay in Canada?</h1>
-    <p class="lead">Canada-only itineraries, verified segment by segment.</p>
+    <p class="lead">Canada-only itineraries, verified so you can confirm coverage.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="container">
-    <p>For some travellers, staying within Canada is more than a preference. Insurance coverage, mobility, documentation, health considerations, personal preference, or other circumstances may make an international border crossing impractical.</p>
+    <p>For some travellers, staying within Canada is not just a preference — it is a requirement. Many travel insurance policies only cover the trip if every segment remains in Canada, or they impose restrictions that make an international border crossing impractical. Eligibility and coverage can also vary from province to province. The same can be true for medical coverage, mobility, documentation, and other circumstances.</p>
+    <p>I do not sell travel insurance, but I have done a lot of research on travelling in Canada with my own 80-plus-year-old parents. That experience means I can bring practical, relevant knowledge to your trip planning when it applies to your situation.</p>
     <p>I can research itineraries specifically around that requirement. That means checking more than the destination name.</p>
     <h2>What I can investigate</h2>
     <ul class="checklist">
@@ -541,9 +542,50 @@ PAGES = [
       <li>Ground transportation and transfers</li>
       <li>Overnight stops</li>
       <li>Connections and excursions</li>
+      <li>How travel insurance eligibility or coverage may change from province to province</li>
     </ul>
-    <p>The objective is to identify whether the complete trip actually remains within Canada. You remain responsible for confirming insurance coverage and entry or document requirements with the relevant provider or authority.</p>
+    <p>The objective is to identify whether the complete trip actually remains within Canada, so you can confirm with your insurer or provider that the itinerary meets their requirements. You remain responsible for confirming insurance coverage, eligibility, and any entry or document requirements with the relevant provider or authority.</p>
     <p><a href="/plan/?canada_only=Yes" class="btn btn-primary">Request a Canada-only itinerary review</a></p>
+  </div>
+</section>
+""",
+    },
+    {
+        "slug": "complex-canadian-trips",
+        "title": "Complex Canadian Trips | Voyages By Dave",
+        "description": "Plan complex Canadian trips with multiple destinations, transportation modes, and constraints. I research rail, ferry, flight, and road connections and design an itinerary that fits your trip.",
+        "body_class": "page-sub",
+        "priority": 0.9,
+        "content": """
+<header class="page-header">
+  <div class="container">
+    <h1>Complex Canadian trips are my specialty</h1>
+    <p class="lead">When a Canadian trip has several moving parts, I research how they connect.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <p>Some Canadian trips are simple: one city, one hotel, one purpose. Others involve several provinces, multiple modes of transportation, seasonal windows, and people with different needs. Those are the trips where research and sequencing matter most.</p>
+    <h2>What makes a Canadian trip complex</h2>
+    <ul class="checklist">
+      <li>Multiple destinations in one trip, often thousands of kilometres apart</li>
+      <li>Combining rail, ferries, flights, rental cars, or coach in one itinerary</li>
+      <li>Tight or seasonal connections, such as a train that only runs on certain days</li>
+      <li>Different accessibility or pacing needs across the group</li>
+      <li>Canada-only requirements, where every segment must remain in Canada</li>
+      <li>Remote destinations with limited transportation options</li>
+    </ul>
+    <h2>Examples of complex trips I help plan</h2>
+    <p>These are the kinds of questions I research and connect into a workable itinerary:</p>
+    <ul class="checklist">
+      <li><strong>Rockies by rail and road:</strong> A train from Vancouver to Banff or Jasper, then a rental car through mountain parks, with the right seasonal timing.</li>
+      <li><strong>BC coast by ferry and float plane:</strong> Vancouver Island, the Gulf Islands, and the Sunshine Coast linked by BC Ferries, seaplanes, and local transport.</li>
+      <li><strong>Atlantic Canada without flying:</strong> Halifax, Prince Edward Island, Cape Breton, and Newfoundland connected by train, ferry, and car.</li>
+      <li><strong>Canada-only family trip:</strong> A multi-province trip for several generations where every segment must stay within Canada.</li>
+    </ul>
+    <p>My job is to turn those possibilities into a trip that makes sense on paper and works well when you are actually taking it.</p>
+    <p><a href="/plan/" class="btn btn-primary">Tell me about your complex trip</a></p>
   </div>
 </section>
 """,
@@ -921,7 +963,7 @@ PAGES = [
     </details>
     <details class="faq-item">
       <summary>Do you book international travel?</summary>
-      <p>Canada is my primary focus. I also help existing clients and travellers with selected international cruises, diving, expedition, and complex travel.</p>
+      <p>Canada is my prime focus, but I do work with travellers on trips outside Canada as well. The best fit is usually selected international cruises, diving, expedition travel, or complex multi-destination trips. Existing clients are also welcome to ask about international options.</p>
     </details>
     <details class="faq-item">
       <summary>Do you use AI?</summary>

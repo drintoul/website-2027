@@ -2,6 +2,8 @@
 """Generate static HTML pages and supporting files for Voyages By Dave."""
 
 import json
+import html
+import re
 import os
 import shutil
 import sys
@@ -55,6 +57,30 @@ def build_jsonld():
     return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
 
 
+def build_faq_jsonld(content):
+    main_entity = []
+    for m in re.finditer(r'<details class="faq-item">\s*<summary>(.*?)</summary>\s*(.*?)\s*</details>', content, re.DOTALL):
+        question = m.group(1).strip()
+        answer_html = m.group(2)
+        answer_parts = re.findall(r'<p[^>]*>(.*?)</p>', answer_html, re.DOTALL)
+        answer = " ".join(html.unescape(re.sub(r'<[^>]+>', '', part)) for part in answer_parts)
+        answer = clean_text(answer)
+        main_entity.append({
+            "@type": "Question",
+            "name": question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": answer,
+            },
+        })
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": main_entity,
+    }
+    return "<script type=\"application/ld+json\">\n" + json.dumps(data, indent=2) + "\n</script>"
+
+
 def render_page(page):
     template_path = os.path.join(os.path.dirname(__file__), "template.html")
     with open(template_path, "r", encoding="utf-8") as f:
@@ -68,7 +94,7 @@ def render_page(page):
     body_class = page.get("body_class", "page-sub") + f" page-{slug_class}"
     content = page["content"].strip()
 
-    jsonld = build_jsonld() if slug == "" else ""
+    jsonld = build_jsonld() if slug == "" else (build_faq_jsonld(content) if slug == "faq" else "")
 
     html = template
     for key, value in {

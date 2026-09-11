@@ -907,6 +907,16 @@ p.lead, .lead {
   color: var(--brand-accent);
 }
 
+.footer-profiles a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.footer-profiles a:hover,
+.footer-profiles a:focus {
+  color: #fff;
+}
+
 .footer-legal {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 1.25rem;

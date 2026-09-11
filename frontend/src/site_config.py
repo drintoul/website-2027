@@ -34,6 +34,7 @@ SITE = {
             {"label": "Accessible Travel", "slug": "accessible-travel-canada"},
             {"label": "Multigenerational", "slug": "multigenerational-canada"},
             {"label": "Adventure & Diving", "slug": "adventure-canada"},
+            {"label": "Complex Canadian Trips", "slug": "complex-canadian-trips"},
         ]},
         {"label": "How I Work", "slug": "how-i-work"},
         {"label": "About Dave", "slug": "about"},
