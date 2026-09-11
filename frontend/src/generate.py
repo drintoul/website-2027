@@ -69,7 +69,7 @@ def build_jsonld(page, canonical):
         "@id": AGENCY_ID,
         "name": SITE["brand"],
         "url": SITE["url"],
-        "logo": SITE["url"] + "/favicon-2026.svg",
+        "logo": SITE["url"] + "/images/logo-512.png",
         "image": SITE["cover_image"],
         "description": BUSINESS_DESCRIPTION,
         "slogan": SLOGAN,
@@ -365,7 +365,7 @@ def main():
     write(os.path.join(BASE_DIR, "robots.txt"), generate_robots())
 
     src_dir = os.path.dirname(__file__)
-    for asset in ("style.css", "site.js", "favicon-2026.svg"):
+    for asset in ("style.css", "site.js", "favicon-2026.svg", "favicon-48x48.png", "favicon-96x96.png", "favicon.ico", "apple-touch-icon.png"):
         src = os.path.join(src_dir, asset)
         if os.path.exists(src):
             dst = os.path.join(BASE_DIR, asset)
